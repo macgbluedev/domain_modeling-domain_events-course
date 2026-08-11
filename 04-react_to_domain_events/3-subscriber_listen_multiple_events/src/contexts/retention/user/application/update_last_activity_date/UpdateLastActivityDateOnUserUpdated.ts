@@ -5,7 +5,7 @@ import { UserEmailUpdatedDomainEvent } from "../../../../shop/users/domain/UserE
 import { UserLastActivityUpdater } from "./UserLastActivityUpdater";
 
 export class UpdateLastActivityDateOnUserUpdated
-	implements DomainEventSubscriber<UserArchivedDomainEvent | UserEmailUpdatedDomainEvent>
+	implements DomainEventSubscriber<UserArchivedDomainEvent | UserEmailUpdatedDomainEvent> // TS feat: union types, in the interface we use a generic T
 {
 	constructor(private readonly updater: UserLastActivityUpdater) {}
 
