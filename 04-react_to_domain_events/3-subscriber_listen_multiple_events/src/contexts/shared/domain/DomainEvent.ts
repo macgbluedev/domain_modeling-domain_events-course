@@ -3,7 +3,7 @@ export class DomainEvent {
 
 	protected constructor(
 		public readonly eventName: string,
-		occurredOn?: Date,
+		occurredOn?: Date, //the domain event required a 'date' because it refer to a past action
 	) {
 		this.occurredOn = occurredOn ?? new Date();
 	}
