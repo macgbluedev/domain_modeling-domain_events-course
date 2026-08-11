@@ -11,7 +11,7 @@ export class WelcomeEmailSender {
 	) {}
 
 	async send(userId: string, name: string, emailAddress: string): Promise<void> {
-		const email = WelcomeEmail.send(
+		const email = WelcomeEmail.send( //Note semantic contructor show direct purpose, generate UUID in application layer
 			await this.uuidGenerator.generate(),
 			userId,
 			name,
