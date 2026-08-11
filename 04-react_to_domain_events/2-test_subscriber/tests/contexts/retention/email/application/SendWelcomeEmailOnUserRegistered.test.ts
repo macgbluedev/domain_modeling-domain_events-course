@@ -13,7 +13,7 @@ describe("SendWelcomeEmailOnUserRegistered should", () => {
 	const eventBus = new MockEventBus();
 	const subscriber = new SendWelcomeEmailOnUserRegistered(
 		new WelcomeEmailSender(uuidGenerator, emailSender, eventBus),
-	);
+	); // This use case has two parts, the properly use case and its event subcriber, the idea is show them has a single unit (use case + event subscriber) and the both using the event susbcriber has entry point
 
 	it("send a welcome email on user registered", async () => {
 		const event = UserRegisteredDomainEventMother.create();
@@ -30,7 +30,7 @@ describe("SendWelcomeEmailOnUserRegistered should", () => {
 		`,
 		});
 
-		const expectedEmailPrimitives = email.toPrimitives();
+		const expectedEmailPrimitives = email.toPrimitives(); //We can simplify the construction of all requerid objetcs usign the prev object has parameter, but this generate a hard couplin, its best option get each object and invoke the next using the required primites from prev object
 
 		const expectedDomainEvent = WelcomeEmailSentDomainEventMother.create(expectedEmailPrimitives);
 
