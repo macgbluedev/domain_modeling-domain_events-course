@@ -4,7 +4,7 @@ import { UserRegisteredDomainEvent } from "../../../../shop/users/domain/UserReg
 import { WelcomeEmailSender } from "./WelcomeEmailSender";
 
 export class SendWelcomeEmailOnUserRegistered
-	implements DomainEventSubscriber<UserRegisteredDomainEvent>
+	implements DomainEventSubscriber<UserRegisteredDomainEvent> // Convention to listen event: action + 'on' + past action that trigger
 {
 	constructor(private readonly sender: WelcomeEmailSender) {}
 
