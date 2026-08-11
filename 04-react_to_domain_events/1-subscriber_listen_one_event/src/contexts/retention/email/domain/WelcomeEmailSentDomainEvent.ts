@@ -1,6 +1,6 @@
 import { DomainEvent } from "../../../shared/domain/DomainEvent";
 
-export class WelcomeEmailSentDomainEvent extends DomainEvent {
+export class WelcomeEmailSentDomainEvent extends DomainEvent { //domain event name convention: action + 'domainEvent'
 	constructor(
 		public readonly id: string,
 		public readonly userId: string,
